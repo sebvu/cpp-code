@@ -26,55 +26,55 @@ int main() {
     return 0;
 }
 
-// std::string decode (std::ifstream& inputFile) {
-//     // With the format, (# word), we are able to store all input into a map inputMap.
-//     std::map<int, std::string> inputMap;
-//     // Will append all decoded messages into message to return.
-//     std::string message = "";
-//     std::string inputText;
-//     // Using delimeter " ", we can extract our key and value pairs that will assign each number (key) to the corresponding text (value) per parsed line.
-//     while (getline(inputFile, inputText)) {
-//         // To avoid repetition, we are pre-assigning our key and values in terms of our delimeter spacePos.
-//         int spacePos = inputText.find(" ");
-//         int key = stoi(inputText.substr(0, spacePos)); // Converting to integer.
-//         std::string value = inputText.substr(spacePos + 1, inputText.size());
-//         // Insert key value pairs into inputMap.
-//         inputMap.insert(std::pair<int, std::string>(key, value));
-//     }
-//     // Input file text is now formatted into value key pair inputMap.
+std::string decode (std::ifstream& inputFile) {
+    // With the format, (# word), we are able to store all inputFile text into a map inputMap.
+    std::map<int, std::string> inputMap;
+    // Will append all decoded messages into message to return.
+    std::string message = "";
+    std::string inputText;
+    // Using delimeter " ", we can extract our key and value pairs that will assign each number (key) to the corresponding text (value) per parsed line.
+    while (getline(inputFile, inputText)) {
+        // To avoid repetition, we are pre-assigning our key and values in terms of our delimeter spacePos.
+        int spacePos = inputText.find(" ");
+        int key = stoi(inputText.substr(0, spacePos)); // Converting to integer.
+        std::string value = inputText.substr(spacePos + 1, inputText.size());
+        // Insert key value pairs into inputMap.
+        inputMap.insert(std::pair<int, std::string>(key, value));
+    }
+    // Input file text is now formatted into value key pair inputMap.
 
-//     // Using the Triangular Numbers Sequence formula n(n + 1)/2 (where we substitute n for key),
-//     // we can find all the number sequences paired values within inputMap.size() and append to message.
-//     // Value examples (1, 3, 6, 10, 15, 21....)
+    // Using the Triangular Numbers Sequence formula n(n + 1)/2 (where we substitute n for key),
+    // we can find all the number sequences paired values within inputMap.size() and append to message.
+    // Value examples (1, 3, 6, 10, 15, 21....)
     
-//     for (int key = 1; key < inputMap.size(); key++) {
-//         int currentSequence = key * (key + 1) / 2; // Gives the sequence for current index.
-//         if (inputMap.size() < currentSequence) // Will break out of loop if current sequence exceeds map size. Essential for avoiding out of range error.
-//             break; // 
-//         message.append(inputMap.at(currentSequence)).append(" ");
-//     }
-//     return message.erase(message.size()-1); // Returns message, removes trailing white space.
-// }
+    for (int key = 1; key < inputMap.size(); key++) {
+        int currentTriangleSequence = key * (key + 1) / 2; // Gives the sequence for current index.
+        if (inputMap.size() < currentTriangleSequence) // Will break out of loop if current sequence exceeds map size. Essential for avoiding out of range error.
+            break; // 
+        message.append(inputMap.at(currentTriangleSequence)).append(" ");
+    }
+    return message.erase(message.size()-1); // Returns message, removes trailing white space.
+}
 
 //without comments
 
-std::string decode (std::ifstream& inputFile) {
-    std::map<int, std::string> inputMap;
-    std::string message = "";
-    std::string inputText;
+// std::string decode (std::ifstream& inputFile) {
+//     std::map<int, std::string> inputMap;
+//     std::string message = "";
+//     std::string inputText;
 
-    while (getline(inputFile, inputText)) {
-        int spacePos = inputText.find(" ");
-        int key = stoi(inputText.substr(0, spacePos)); 
-        std::string value = inputText.substr(spacePos + 1, inputText.size());
-        inputMap.insert(std::pair<int, std::string>(key, value));
-    }
+//     while (getline(inputFile, inputText)) {
+//         int spacePos = inputText.find(" ");
+//         int key = stoi(inputText.substr(0, spacePos)); 
+//         std::string value = inputText.substr(spacePos + 1, inputText.size());
+//         inputMap.insert(std::pair<int, std::string>(key, value));
+//     }
     
-    for (int key = 1; key < inputMap.size(); key++) {
-        int currentSequence = key * (key + 1) / 2;
-        if (inputMap.size() < currentSequence)
-            break;
-        message.append(inputMap.at(currentSequence)).append(" ");
-    }
-    return message.erase(message.size()-1); 
-}
+//     for (int key = 1; key < inputMap.size(); key++) {
+//         int currentTriangleSequence = key * (key + 1) / 2;
+//         if (inputMap.size() < currentTriangleSequence)
+//             break;
+//         message.append(inputMap.at(currentTriangleSequence)).append(" ");
+//     }
+//     return message.erase(message.size()-1); 
+// }
