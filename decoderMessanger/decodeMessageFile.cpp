@@ -49,9 +49,47 @@ std::string decode (std::ifstream& input) {
     
     for (int key = 1; key < inputMap.size(); key++) {
         int currentSequence = key * (key + 1) / 2; // Gives the sequence for current index.
-        if (inputMap.size() < currentSequence) // Will return message if current sequence exceeds map size. Essential for avoiding out of range error.
-            return message.erase(message.size()-1); // Returns message, removes trailing white space.
+        if (inputMap.size() < currentSequence) // Will break out of loop if current sequence exceeds map size. Essential for avoiding out of range error.
+            break; // 
         message.append(inputMap.at(currentSequence)).append(" ");
     }
     return message.erase(message.size()-1); // Returns message, removes trailing white space.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+std::string decode (std::ifstream& input) {
+    std::map<int, std::string> inputMap;
+    std::string message = "";
+    std::string inputText;
+    
+    while (getline(input, inputText)) {
+        int spacePos = inputText.find(" ");
+        int key = stoi(inputText.substr(0, spacePos)); 
+        std::string value = inputText.substr(spacePos + 1, inputText.size());
+        inputMap.insert(std::pair<int, std::string>(key, value));
+    }
+    
+    for (int key = 1; key < inputMap.size(); key++) {
+        int currentSequence = key * (key + 1) / 2;
+        if (inputMap.size() < currentSequence)
+            break; // 
+        message.append(inputMap.at(currentSequence)).append(" ");
+    }
+    return message.erase(message.size()-1); 
 }
