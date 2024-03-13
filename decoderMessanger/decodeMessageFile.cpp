@@ -49,8 +49,8 @@ std::string decode (std::ifstream& inputFile) {
     
     for (int key = 1; key < inputMap.size(); key++) {
         int currentTriangleSequence = key * (key + 1) / 2; // Gives the sequence for current index.
-        if (inputMap.size() < currentTriangleSequence) // Will break out of loop if current sequence exceeds map size. Essential for avoiding out of range error.
-            break; // 
+        if (!inputMap.count(currentTriangleSequence)) // If key does not exist, break. Else, will append key at currentTriangleSequence on to message. Necessary for avoiding out of range errors.
+            break;
         message.append(inputMap.at(currentTriangleSequence)).append(" ");
     }
     return message.erase(message.size()-1); // Returns message, removes trailing white space.
@@ -65,14 +65,14 @@ std::string decode (std::ifstream& inputFile) {
 
 //     while (getline(inputFile, inputText)) {
 //         int spacePos = inputText.find(" ");
-//         int key = stoi(inputText.substr(0, spacePos)); 
+//         int key = stoi(inputText.substr(0, spacePos)); // Converting to integer.
 //         std::string value = inputText.substr(spacePos + 1, inputText.size());
 //         inputMap.insert(std::pair<int, std::string>(key, value));
 //     }
     
 //     for (int key = 1; key < inputMap.size(); key++) {
 //         int currentTriangleSequence = key * (key + 1) / 2;
-//         if (inputMap.size() < currentTriangleSequence)
+//         if (!inputMap.count(currentTriangleSequence))
 //             break;
 //         message.append(inputMap.at(currentTriangleSequence)).append(" ");
 //     }
