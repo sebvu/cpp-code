@@ -51,12 +51,15 @@ std::string decode (std::ifstream& inputFile) {
     // Using the Triangular Numbers Sequence formula n(n + 1)/2 (where we substitute n for key),
     // we can find all the number sequences paired values within inputMap.size() and append to message.
     // Value examples (1, 3, 6, 10, 15, 21....)
+
+    int key = 1;
     
-    for (int key = 1; key < inputMap.size(); key++) {
+    while(true) {
         int currentTriangleSequence = key * (key + 1) / 2; // Gives the sequence for current index.
         if (!inputMap.count(currentTriangleSequence)) // If key does not exist, break. Else, will append key at currentTriangleSequence on to message. Necessary for avoiding out of range errors.
             break;
         message.append(inputMap.at(currentTriangleSequence)).append(" ");
+        key++;
     }
     return message.erase(message.size()-1); // Returns message, removes trailing white space.
 }
@@ -69,16 +72,19 @@ std::string decode (std::ifstream& inputFile) {
 
 //     while (getline(inputFile, inputText)) {
 //         int spacePos = inputText.find(" ");
-//         int key = stoi(inputText.substr(0, spacePos)); // Converting to integer.
+//         int key = stoi(inputText.substr(0, spacePos)); 
 //         std::string value = inputText.substr(spacePos + 1, inputText.size());
 //         inputMap.insert(std::pair<int, std::string>(key, value));
 //     }
     
-//     for (int key = 1; key < inputMap.size(); key++) {
-//         int currentTriangleSequence = key * (key + 1) / 2;
-//         if (!inputMap.count(currentTriangleSequence))
-//             break;
-//         message.append(inputMap.at(currentTriangleSequence)).append(" ");
-//     }
-//     return message.erase(message.size()-1); 
+        // int key = 1;
+        
+        // while(true) {
+        //     int currentTriangleSequence = key * (key + 1) / 2; 
+        //     if (!inputMap.count(currentTriangleSequence))
+        //         break;
+        //     message.append(inputMap.at(currentTriangleSequence)).append(" ");
+        //     key++;
+        // }
+        // return message.erase(message.size()-1);
 // }
