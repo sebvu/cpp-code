@@ -81,7 +81,7 @@ int main () {
     std::string input = "", fileOutput = "";
     std::vector <std::string> wordsToEncode = {};
     
-    std::cout << "Please provide a list of words in any specific order to encode. Click enter once all words have been entered."
+    std::cout << "\nPlease provide a list of words in any specific order to encode. Click enter once all words have been entered."
     << "\n- Add a SINGULAR space between each word. No space should exceed more then one."
     << "\n- Any punctuation and numbers are allowed"
     << "\n- There should be no trailing white spaces on either end.\n";
@@ -105,7 +105,7 @@ int main () {
 
     // We have everything from the user.
 
-    std::cout << "Generating test case. Please wait." << std::endl;
+    std::cout << "Generating test case. Please wait.\n\nvvvvvvvvvvvv\n" << std::endl;
 
     std::stringstream ss(input);
     std::string word;
@@ -115,7 +115,7 @@ int main () {
 
     generateTestCase(uniqueWords, output, wordsToEncode);
 
-    std::cout << "\nFile " << fileOutput << ".txt has been created within directory testCases/\n\nFormat is (# word) in a randomized order.\n\nHappy hacking!" << std::endl;
+    std::cout << "\n^^^^^^^^^^^^\n\n" << fileOutput << ".txt has been created within directory testCases/\n\nHappy snacking!" << std::endl;
     
     // count how many words there will be
     // generate the number of triangle sequences up to that count

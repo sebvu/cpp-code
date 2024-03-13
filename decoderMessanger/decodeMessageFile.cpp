@@ -9,17 +9,23 @@ std::string decode (std::ifstream&);
 int main() {
     // Recieving .txt file from user
     // An alternative would be to set inputFile filename of the given testcase, however multiple test cases are used for my purposes.
+    std::cout << "\nPlease input the .txt file you wish to decode." << std::endl;
     std::string inputFile; 
     std::cin >> inputFile;
+    std::string pathToInputFile = "./testCases/";
+    pathToInputFile.append(inputFile);
+
     // Open input file to parse in to a string for decoding.
-    std::ifstream input(inputFile);
+    std::ifstream input(pathToInputFile);
     // File validation to check if file is open.
     if (!input.is_open()) {
         std::cerr << "Error: File not found" << std::endl;
         return 1;
     }
     // After validating our file is open, we will put it through out decode function.
-    std::cout << decode(input) << std::endl;
+    std::cout << "\nvvvvvvvvvvvv\n\n" << decode(input) << "\n\n^^^^^^^^^^^^\n\nYour message has been decoded.\n\nHappy snacking!" << std::endl;
+
+
 
     input.close();
 
