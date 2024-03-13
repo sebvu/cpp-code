@@ -115,7 +115,7 @@ int main () {
 
     generateTestCase(uniqueWords, output, wordsToEncode);
 
-    std::cout << "File " << fileOutput << ".txt has been created within directory testCases/\n\nFormat is (# word) in a randomized order.\n\nHappy hacking!" << std::endl;
+    std::cout << "\nFile " << fileOutput << ".txt has been created within directory testCases/\n\nFormat is (# word) in a randomized order.\n\nHappy hacking!" << std::endl;
     
     // count how many words there will be
     // generate the number of triangle sequences up to that count

@@ -30,8 +30,7 @@ std::string decode (std::ifstream& inputFile) {
     // With the format, (# word), we are able to store all inputFile text into a map inputMap.
     std::map<int, std::string> inputMap;
     // Will append all decoded messages into message to return.
-    std::string message = "";
-    std::string inputText;
+    std::string message = "", inputText;
     // Using delimeter " ", we can extract our key and value pairs that will assign each number (key) to the corresponding text (value) per parsed line.
     while (getline(inputFile, inputText)) {
         // To avoid repetition, we are pre-assigning our key and values in terms of our delimeter spacePos.
@@ -60,8 +59,7 @@ std::string decode (std::ifstream& inputFile) {
 
 // std::string decode (std::ifstream& inputFile) {
 //     std::map<int, std::string> inputMap;
-//     std::string message = "";
-//     std::string inputText;
+//     std::string message = "", inputText;
 
 //     while (getline(inputFile, inputText)) {
 //         int spacePos = inputText.find(" ");
