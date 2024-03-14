@@ -23,9 +23,15 @@ int main() {
         return 1;
     }
     // After validating our file is open, we will put it through out decode function.
-    std::cout << "\nvvvvvvvvvvvv\n\n" << decode(input) << "\n\n^^^^^^^^^^^^\n\nYour message has been decoded.\n\nHappy snacking!" << std::endl;
 
+    std::string decodedMessage = decode(input);
 
+    if (decodedMessage == "") {
+        std::cerr << "Error: Empty file." << std::endl;
+        return 1;
+    }
+    std::cout << "\nvvvvvvvvvvvv\n\n" << decodedMessage << "\n\n^^^^^^^^^^^^\n\nYour message has been decoded.\n\nHappy snacking!" << std::endl;
+    
 
     input.close();
 
@@ -46,6 +52,7 @@ std::string decode (std::ifstream& inputFile) {
         // Insert key value pairs into inputMap.
         inputMap.insert(std::pair<int, std::string>(key, value));
     }
+
     // Input file text is now formatted into value key pair inputMap.
 
     // Using the Triangular Numbers Sequence formula n(n + 1)/2 (where we substitute n for key),
@@ -61,6 +68,10 @@ std::string decode (std::ifstream& inputFile) {
         message.append(inputMap.at(currentTriangleSequence)).append(" ");
         key++;
     }
+
+    if (message == "")
+        return "";
+
     return message.erase(message.size()-1); // Returns message, removes trailing white space.
 }
 
@@ -77,14 +88,18 @@ std::string decode (std::ifstream& inputFile) {
 //         inputMap.insert(std::pair<int, std::string>(key, value));
 //     }
     
-        // int key = 1;
-        
-        // while(true) {
-        //     int currentTriangleSequence = key * (key + 1) / 2; 
-        //     if (!inputMap.count(currentTriangleSequence))
-        //         break;
-        //     message.append(inputMap.at(currentTriangleSequence)).append(" ");
-        //     key++;
-        // }
-        // return message.erase(message.size()-1);
+//     int key = 1;
+
+//     while(true) {
+//         int currentTriangleSequence = key * (key + 1) / 2; 
+//         if (!inputMap.count(currentTriangleSequence))
+//             break;
+//         message.append(inputMap.at(currentTriangleSequence)).append(" ");
+//         key++;
+//     }
+
+//      if (message == "")
+//          return "";
+
+//     return message.erase(message.size()-1);
 // }
