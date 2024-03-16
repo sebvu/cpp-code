@@ -36,7 +36,11 @@ private:
     std::string Model;
     std::string Company;
     int Year;
-
+/*
+protected:
+    In C++, protected members are inherited by derived classes but cannot be accessed directly using the dot operator on derived class objects. 
+    They are accessible only through member functions of the derived class or the base class itself.
+*/
 public:
     Car(std::string Model, std::string Company, int Year) 
         : Model(Model), Company(Company), Year(Year) {}
@@ -67,8 +71,8 @@ public:
         else
             std::cout << "Ew.. car is too young man. No pimped ride for you." << std::endl;
     }
-    
-    void carDetails() {
+
+    virtual void carDetails() {
         std::cout << "Model is - " << Model << std::endl;
         std::cout << "Company is - " << Company << std::endl;
         std::cout << "Year is - " << Year << std::endl;

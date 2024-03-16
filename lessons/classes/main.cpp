@@ -22,11 +22,6 @@ int main() {
         Encapsulation:
             Make properties private so no class outside of main class can acces it.
             In order to access it, will have to go through properties set up. (setters and getters)
-
-            Encapsulation in object-oriented programming bundles data (attributes) and the functions (methods) that manage it within a class. 
-            This "data hiding" protects information with public methods acting as the gateway, ensuring controlled access, 
-            improved code maintainability, and reduced errors. It promotes well-defined objects with clear responsibilities, 
-            making code more modular, reusable, and easier to manage.
         Abstraction:
             Abstraction in this code allows us to define a general 'Car' concept with a public method PimpMyRide(). 
             This method encapsulates the logic of determining whether a car is eligible for pimping. 
