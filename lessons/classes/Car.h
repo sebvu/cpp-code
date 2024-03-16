@@ -13,13 +13,14 @@ class AbstractCar {
 
         PimpMyRide is 'obligatory', force any class to provide implemention for said method.
 
-        Virtual keywords means that PimpMyRIde can be overridden in derived classes.
+        Virtual keywords means that PimpMyRide can be overridden in derived classes.
         
     virtual void PimpMyRide() {
         std::cout << "Hell yeah! Pimp that ride no matter what." << std::endl;
     };
         
         This is a non-pure virtual function. Provides a default definition for PimpMyRide(), can be overwritten still.
+        You do NOT have to provide an implementation.
 
         Pure virtual functions: 
             When you want to establish a contract that all derived classes must fulfill, providing a common interface with customizable behavior.
@@ -31,7 +32,7 @@ class AbstractCar {
     virtual void PimpMyRide() = 0; //Pure virtual function.
 };
 
-class Car:AbstractCar { //Car signed AbstractCar contract
+class Car: private AbstractCar { //Car signed AbstractCar contract
 private:
     std::string Model;
     std::string Company;
@@ -69,9 +70,9 @@ public:
 
     void PimpMyRide() {
         if(Year <= 2014)
-            std::cout << "Hell yeah! We like the OGs. Ride has been pimped." << std::endl;
+            std::cout << Year << "?! Hell yeah! We like the OGs. Ride has been pimped." << std::endl;
         else
-            std::cout << "Ew.. car is too young man. No pimped ride for you." << std::endl;
+            std::cout << Year << ".. Ew.. car is too young man. No pimped ride for you." << std::endl;
     }
 
     void carDetails() {
@@ -79,9 +80,13 @@ public:
         std::cout << "Company is - " << Company << std::endl;
         std::cout << "Year is - " << Year << std::endl;
     }
+
+    virtual void maintenance() {
+        std::cout << Year << " " << Company << " " << Model << " is going through maintenance.." << std::endl;
+    }
 };
 
-class GasCar:public Car { //Child class, inhereted from base class Car
+class GasCar: public Car { //Child class, inhereted from base class Car
 private:
     int Gas;
 
@@ -114,9 +119,13 @@ public:
         Gas += 30;
         std::cout << "Filling up.... you now have +30 gas!" << std::endl;
     }
+
+    void maintenance() {
+        std::cout << getYear() << " " << getCompany() << " " << getModel() << " is going through an oil change.." << std::endl;
+    }
 };
 
-class ElectricCar:public Car { //Child class, inhereted all properties from base class Car
+class ElectricCar: public Car { //Child class, inhereted all properties from base class Car
 private:
     int Charge;
     
@@ -148,6 +157,10 @@ public:
     void fillUp() {
         Charge += 30;
         std::cout << "Charging up.... you now have +30 charge!" << std::endl;
+    }
+
+    void maintenance() {
+        std::cout << getYear() << " " << getCompany() << " " << getModel() << " is going through an battery change.." << std::endl;
     }
 };
 
