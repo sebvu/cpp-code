@@ -3,19 +3,30 @@
 #include "Car.h"
 
 int main() {
-    Car car1 = Car("Cybertruck", "Tesla", 2023);
-    Car car2 = Car("Fiesta", "Ford", 2014);
-    
-    car1.setYear(2096);
-    std::cout << car1.getModel() << " is year " << car1.getYear() << std::endl;
-    std::cout << car2.getModel() << " is year " << car2.getYear() << std::endl;
 
-    car1.PimpMyRide();
-    car2.PimpMyRide();
+    // car class is used as a blueprint
+    Car Car1 = Car("Camry", "Toyota", 2016);
 
-    GasCar FordFiesta = GasCar("Fiesta", "Ford", 2014, 100);
+    Car1.PimpMyRide();
+
+    GasCar FordFiesta = GasCar("Fiesta", "Ford", 2014, 11);
+    ElectricCar CyberTruck = ElectricCar("Cybertruck", "Tesla", 2023, 19);
 
     FordFiesta.carDetails();
+    FordFiesta.accelerate();
+    FordFiesta.accelerate();
+    FordFiesta.fillUp();
+    FordFiesta.accelerate();
+    FordFiesta.setModel("toyota");
+    std::cout << "\n\n";
+    CyberTruck.carDetails();
+    CyberTruck.accelerate();
+    CyberTruck.accelerate();
+    CyberTruck.fillUp();
+    CyberTruck.accelerate();
+    CyberTruck.PimpMyRide();
+
+
 
 
     /* 

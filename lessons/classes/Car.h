@@ -37,9 +37,11 @@ private:
     std::string Company;
     int Year;
 /*
-protected:
+protected
     In C++, protected members are inherited by derived classes but cannot be accessed directly using the dot operator on derived class objects. 
     They are accessible only through member functions of the derived class or the base class itself.
+
+    Think of it as private members that could be inherited.
 */
 public:
     Car(std::string Model, std::string Company, int Year) 
@@ -72,14 +74,14 @@ public:
             std::cout << "Ew.. car is too young man. No pimped ride for you." << std::endl;
     }
 
-    virtual void carDetails() {
+    void carDetails() {
         std::cout << "Model is - " << Model << std::endl;
         std::cout << "Company is - " << Company << std::endl;
         std::cout << "Year is - " << Year << std::endl;
     }
 };
 
-class GasCar:Car { //Child class, inhereted from base class Car
+class GasCar:public Car { //Child class, inhereted from base class Car
 private:
     int Gas;
 
@@ -93,13 +95,28 @@ public:
     int getGas() {
         return Gas;
     }
+
     void carDetails() {
         Car::carDetails();
         std::cout << "Gas is at " << Gas << std::endl;
     }
+
+    void accelerate() {
+        if (Gas >= 10) {
+            Gas -= 10;
+            std::cout << "Accelerating and using up 10 gas! You now have " << Gas << " remaining." << std::endl;
+        }
+        else
+            std::cout << Gas << " is not enough gas to accelerate. Fuel up above 10!" << std::endl;;
+    }   
+
+    void fillUp() {
+        Gas += 30;
+        std::cout << "Filling up.... you now have +30 gas!" << std::endl;
+    }
 };
 
-class ElectricCar:Car { //Child class, inhereted all properties from base class Car
+class ElectricCar:public Car { //Child class, inhereted all properties from base class Car
 private:
     int Charge;
     
@@ -113,11 +130,25 @@ public:
     int getCharge() {
         return Charge;
     }
+
     void carDetails() {
         Car::carDetails();
         std::cout << "Charge is at " << Charge << std::endl;
     }
-};
 
+    void accelerate() {
+        if (Charge >= 10) {
+            Charge -= 10;
+            std::cout << "Accelerating and using up 10 charge! You now have " << Charge << " remaining." << std::endl;
+        }
+        else
+            std::cout << Charge << " is not enough charge to accelerate. Charge up above 10!" << std::endl;;
+    }   
+
+    void fillUp() {
+        Charge += 30;
+        std::cout << "Charging up.... you now have +30 charge!" << std::endl;
+    }
+};
 
 #endif
