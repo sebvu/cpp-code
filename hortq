@@ -1,0 +1,225 @@
+[33mcommit e777d9794f1105e618b747305beac7a46b536b6d[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sun Mar 17 03:22:32 2024 -0500
+
+    Add new problems in problems
+    
+    Unfinished problem as of now;
+    
+    - DynamicArrayResizing
+    - staircase
+    - springBreakBonus
+
+[33mcommit b010de63b0946ecabe6998eadc3876303aa5e663[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 14:27:59 2024 -0500
+
+    Remove jobProblem directory
+    
+    Moved all jobProblem files to problem. Removed jopProblem directory.
+
+[33mcommit fe84676db2d6b05589d39cb3bcc85dca6ea5f7e9[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 07:12:17 2024 -0500
+
+    Re-format cpp files
+
+[33mcommit b8cb90b18e6cb735bc6206a292b048dbb53aac66[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 06:52:06 2024 -0500
+
+    Added polymorphism notes
+
+[33mcommit e4d908d8e29ef18fc11561dcb51745e9e295b015[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 06:13:13 2024 -0500
+
+    Add class inheritence access modifiers
+    
+    Issue with calling members from base class in child class objects due to
+    unspecified class inheritence access modifiers defaulting to private.
+    
+    Specifying public will ensure all modifiers keep the same access.
+    
+    Protected will change public members to protected, private will remain.
+    
+    Private will change public and protected to private.
+
+[33mcommit bbc65ae977ae7f99f19212fb6430b7eed9af2e50[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 05:20:39 2024 -0500
+
+    Add description for protected access modifier
+
+[33mcommit 79843bcdd0d604ea481e3a878bfe3df9392e8042[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Sat Mar 16 04:54:36 2024 -0500
+
+    Class lessons up to inheritence
+    
+    Self taught class lessons up to inheritence. Will be reviewing
+    polymorphism next.
+
+[33mcommit 72dc9616130919d444f14003502ec9f77ae09ce1[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Fri Mar 15 20:52:28 2024 -0500
+
+    Create staircase problem (unfinished)
+
+[33mcommit 0f641d42e9ffc4c88aebde703b0031e3ac989349[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Thu Mar 14 18:23:19 2024 -0500
+
+    Add love letter test case
+    
+    Hopefully no one decodes this love letter! That would be emberassing!
+
+[33mcommit 38fbf4d4e7976236a3ba1b0d86899c83a077155a[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Thu Mar 14 03:35:32 2024 -0500
+
+    Handled empty file case.
+    
+    If file was empty, would cause a segmentation error due to message
+    attempting to remove the end of an empty string.
+    
+    Instead, will check if message is empty. If empty, will
+    return an empty string and throw out a console error.
+
+[33mcommit df78501d2a1fe4a399b950a2b1eebf851f410e8c[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Thu Mar 14 03:08:24 2024 -0500
+
+    Quick frequency map
+    
+    Doesn't work for large numbers, whoopsie.
+    
+    I'll fix it soon. I always do.
+
+[33mcommit 700bfb61939533942143b462d62d5a3d930b5a91[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Wed Mar 13 04:05:51 2024 -0500
+
+    Fix single test case line core segmentation fault
+    
+    Error with old logic led to a segmentation fault.
+    
+    Key started at 1 which would be our index iterator for our loop.
+    
+    If inputMap.size() = 1, the loop would not start due to it being <
+    exclusive.
+    
+    This would leave an empty string to be returned.
+    
+    message.erase(message.size()-1) attempted to modify an empty string, causing the fault.
+    
+    Solution; a while loop. Realistically, it does not matter what our upper
+    bound was for a loop because of our inner logic of breaking early
+    regardless.
+
+[33mcommit 454f0542f479e696a258a5b4b49662c0015acee8[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Wed Mar 13 01:40:04 2024 -0500
+
+    Improve console UI
+    
+    Added some minor tweaks whenever you run either decodeMessageFile.cpp or
+    triangleSequenceEncoder.cpp in terminal. Better clarity.
+
+[33mcommit 2d7c48e6a5989355626ad71302f96e825c25c7cb[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Wed Mar 13 00:43:44 2024 -0500
+
+    Minor string decleration tweaks and test cases
+    
+    Added a new SECRET test case! Hopefully no one figures it out! :)
+    
+    Tweaked string declerations.
+
+[33mcommit e9e6326ffc3e05482d7974d06f72ccdbaab0ab5a[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Wed Mar 13 00:22:07 2024 -0500
+
+    Create test case encoder
+    
+    Created a test case encorder which takes in user input and re-formats
+    user input into a encoded TriangleSequence format.
+    
+    The format is (# word) and is generated into a random order.
+
+[33mcommit d2734808b33f01bf53b154dc93a157dd079db313[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 16:28:22 2024 -0500
+
+    Redefine currentSequence to currentTriangleSequence for clarity
+
+[33mcommit 5f81a733ff198d45160a3e46f867915fda764cca[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 16:19:46 2024 -0500
+
+    Redefine input parameter to inputFile for clarity
+
+[33mcommit 4b7e4d9ed289b90a6db6662f8674ba4ed2a7f7f0[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 16:06:29 2024 -0500
+
+    Add seperate uncommented code
+
+[33mcommit 3e8c0a236070032d060926ad59e0ef832c234b19[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 07:23:44 2024 -0500
+
+    Update readme
+
+[33mcommit 214b3f3b0082badf8159098ab15a0e1665bb32da[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 07:16:18 2024 -0500
+
+    Complete decodeMessageFile
+    
+    Takes in an input file. File preview is formatted as shown.
+    
+    (number) (word)
+    3 jester
+    1 gaby
+    2 gatorade
+    5 roblox
+    4 cougarcs
+    6 life
+    
+    Decodes unordered values using the Triangular Numbers Sequence formula
+    to form a message. In this case.
+    
+    1: gaby
+    3: jester
+    6: life
+    
+    Output:
+    
+    gaby jester life
+    
+    Project is intended for a online assessment.
+    
+    -----
+    
+    Original test case was buggy, had to replace. Works fine now.
+    
+    Not happy with how I ommited the trailing whitespace, although I don't
+    think there's a better solution.
+    
+    Most likely could fine a more optimal solution, but decided on a map.
+    Will probably come back to this project.
+
+[33mcommit 91c904bed6287c31f6ca124a7387f143a0a3fe7c[m
+Author: Jester Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 02:48:41 2024 -0500
+
+    Create decodeMessage project
+    
+    A contract online assessment project.
+
+[33mcommit e1382f2dc666c5261561c12718bb8e5112f4b768[m
+Author: Jester Sebastian G. Santos <santosjester738@gmail.com>
+Date:   Tue Mar 12 00:44:18 2024 -0500
+
+    Initial commit

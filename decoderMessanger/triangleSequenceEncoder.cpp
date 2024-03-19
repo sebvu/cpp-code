@@ -36,6 +36,8 @@ void generateTestCase(const std::vector<std::string>& randomWords, std::ofstream
     }
 }
 
+
+
 int main () {
 
     const std::vector<std::string> uniqueWords = {
@@ -73,6 +75,8 @@ int main () {
         "dean", "professorship", "department", "faculty", "lecture",
         "teaching", "instruction", "lesson", "educator", "mentor"
     };
+
+
 
     // Triangle sequence encoder!
     // Will create a file in your directory with the test case format.
