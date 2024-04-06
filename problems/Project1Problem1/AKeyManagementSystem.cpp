@@ -201,7 +201,7 @@ void showKeysAnEmployeePossesses(std::string name, Employee employee[], int nEmp
             std::cout << employee[employeeIndex].keys[i] << " ";
         }
     }
-    std::cout << std::endl << std::endl;;
+		std::cout << std::endl << std::endl;;
 }
 
 void whichEmployeePossessesSpecificKey(Employee employee[], std::string key, int nEmployees) {
@@ -214,11 +214,11 @@ void whichEmployeePossessesSpecificKey(Employee employee[], std::string key, int
                 isPossessed = true;
                 employeesPossessing.append(employee[i].name).append(", ");
             }
-        }
-    }
+				}
+		}
 
-    if (isPossessed) {
-        employeesPossessing.append("possess this key.");
+		if (isPossessed) {
+				employeesPossessing.append("possess this key.");
         std::cout << employeesPossessing << std::endl << std::endl;
     }
     else

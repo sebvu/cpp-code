@@ -1,4 +1,4 @@
-#include "Instrument.h"
+#include "Instrument.cpp"
 #include <iostream>
 
 int main() {

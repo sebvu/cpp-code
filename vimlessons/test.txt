@@ -1,0 +1,37 @@
+i - insert mode!!
+sdfodsfd
+hello i am a pretty average sentence.
+hello-i-appended-sentence
+sdjifdsifj
+sdfjisdfi
+sdfjidsf
+fescapesouhoudfhgoufdhgofdughffsd
+f
+iiiiiiiii:::::::::;;;;;;;
+
+123456789
+
+can type whatever i want
+				esc - escapesouhoudfhgoufdhgofdughdfuoghdfoughdfouhdfu!
+print('hello world! this is my amazing message')
+:: fff ::
+
+for (int i = 0; i < 10; i++) {
+std::cout << "I am printing " << i << " amount of hoes." << std::endl;
+
+if (i < 9)
+if (i < 5) 
+std::cout << "still printing them hoes" << std::endl;
+
+}
+
+with auto indention
+
+for (int i = 0; i < 10; i++) {
+		std::cout << "I am printing " << i << " amount of hoes." << std::endl;
+
+		if (i < 9)
+				if (i < 5)
+						std::cout << "still printing them hoes" << std::endl;
+
+}
