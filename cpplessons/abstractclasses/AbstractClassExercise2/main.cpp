@@ -1,6 +1,6 @@
-#include Figure.h
-#include Circle.h
-#include Square.h
+#include "Figure.h"
+#include "Circle.h"
+#include "Square.h"
 
 int main( )
 {

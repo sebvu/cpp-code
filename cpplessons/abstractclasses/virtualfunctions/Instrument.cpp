@@ -1,6 +1,12 @@
 #include "Instrument.h"
 #include <iostream>
 
-void Instrument::MakeSound() {
-    std::cout << "Instrument playing..." << std::endl;
+
+void Cello::MakeSound() {
+    std::cout << "Cello playing...." << std::endl;
+}
+
+
+void Piano::MakeSound() {
+    std::cout << "Piano playing..." << std::endl;
 }
