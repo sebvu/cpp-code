@@ -235,7 +235,7 @@ int main() {
 
     std::cin >> filename;
 
-    // std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     if(!reader(filename, employees, nEmployees)) {
         std::cout << "File not found, exiting the program..." << std::endl;

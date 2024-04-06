@@ -12,7 +12,6 @@ struct Person {
 
     bool operator == (const Person& PERSON) const {
         return this->id == PERSON.id; // compared reference id to called id for true or false
-
     }
 };
 
