@@ -1,0 +1,39 @@
+Problem 1: A square creator
+
+Get an integer input from the user, and create a square using the users input.
+The user input will represent one side of the square.
+Preview:
+
+```
+Please enter a number
+5 (userinput)
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+```
+
+Problem 2: A hello (name) problem!
+Create a program that takes in a user input in the form of a string, and
+print out their name in a greeting. Ask them 5 times in a row.
+At the end of the loop, print Goodbye!
+
+```
+Please type your name
+jester (userinput)
+Hello, jester!
+Please type your name
+ohio (userinput)
+Hello, ohio!
+Please type your name
+Lizahahanana (userinput)
+Hello, Lizahahanana!
+PLease type your name
+123456hello111 (userinput)
+Hello, 123456hello111 (userinput)
+Please type your name
+BawkBawk (userinput)
+Hello, BawkBawk
+Goodbye!
+```
