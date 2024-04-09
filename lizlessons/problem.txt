@@ -1,5 +1,7 @@
 Problem 1: A square creator
 
+Create a file called squareCreator.cpp
+
 Get an integer input from the user, and create a square using the users input.
 The user input will represent one side of the square.
 Preview:
@@ -13,8 +15,11 @@ Please enter a number
 * * * * *
 * * * * *
 ```
-
+-----------------------------------------------------
 Problem 2: A hello (name) problem!
+
+Create a file called helloName.cpp
+
 Create a program that takes in a user input in the form of a string, and
 print out their name in a greeting. Ask them 5 times in a row.
 At the end of the loop, print Goodbye!
@@ -36,4 +41,55 @@ Please type your name
 BawkBawk (userinput)
 Hello, BawkBawk
 Goodbye!
+```
+-----------------------------------------------------
+Project (Week 1):
+
+This week, you learnt for loops and more input and output handling!
+
+Create a program named createTriangle.cpp
+
+You will take in TWO user inputs. The first input will contain a CHAR type input (a single character)
+and the second input will contain a INT type input.
+
+The char type variable will represent what the right triangle will be made of.
+The int type variable will represent the dimensions of the right triangle.
+
+The program will loop 3 times. At the end of the loop, print "Thanks for playing! Goodbye!"
+
+```
+Please enter the character that will make up the right triangle.
+a (userinput)
+Please enter the dimension of the right triangle.
+5 (userinput)
+
+a
+aa
+aaa
+aaaa
+aaaaa
+
+Please enter the character that will make up the right triangle.
+* (userinput)
+Please enter the dimension of the right triangle.
+7 (userinput)
+
+*
+**
+***
+****
+*****
+******
+*******
+
+Please enter the character that will make up the right triangle.
+5 (userinput)
+Please enter the dimension of the right triangle.
+3 (userinput)
+
+5
+55
+555
+
+Thanks for playing! Goodbye!
 ```
