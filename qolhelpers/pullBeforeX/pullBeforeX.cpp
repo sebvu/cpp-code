@@ -1,18 +1,21 @@
 #include <fstream>
 #include <iostream>
+#include <limits>
 #include <string>
 
 // will reap words before or after specified delimeter into its text file
 
 int main() {
     std::string fileName;
-    char delimeter;
+    std::string delimeter;
     int reapWhere;
     std::ifstream file;
 
     while (true) {  // check if file exists
         std::cout << "Type txt file name: ";
         std::cin >> fileName;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         file.open(fileName);
 
@@ -33,11 +36,15 @@ int main() {
               << std::endl
               << "Type delimeter: ";
     std::cin >> delimeter;
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::cout << std::endl;
     while (true) {  // reap before or after
         std::cout << "Reap\n(1) before\n(2) after\n\nEnter reap: ";
         std::cin >> reapWhere;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
         if (reapWhere != 1 && reapWhere != 2) {
             std::cout << "Not an option." << std::endl;
             continue;
@@ -49,16 +56,15 @@ int main() {
     std::string reapedFileName = "./reaped/";  // reaped directory
 
     switch (reapWhere) {
-
     case 1:
-        reapedFileName.append("before_");
+        reapedFileName.append("before");
         break;
     case 2:
-        reapedFileName.append("after_");
+        reapedFileName.append("after");
         break;
     }
 
-    reapedFileName.append(fileName);
+    reapedFileName.append(delimeter).append(fileName);
 
     try {
         std::ofstream reapFile(reapedFileName);  // open output file
