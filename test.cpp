@@ -1,5 +1,5 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <sstream>
 #include <string>
 
@@ -10,7 +10,7 @@ struct Configuration {
   string playerName;
 };
 
-Configuration loadConfig(const string& filename) {
+Configuration loadConfig(const string &filename) {
   ifstream configFile(filename);
   if (!configFile.is_open()) {
     cerr << "Error: Could not open configuration file: " << filename << endl;
@@ -37,10 +37,11 @@ Configuration loadConfig(const string& filename) {
   return config;
 }
 
-void updateConfig(const string& filename, const Configuration& newConfig) {
+void updateConfig(const string &filename, const Configuration &newConfig) {
   ofstream configFile(filename);
   if (!configFile.is_open()) {
-    cerr << "Error: Could not open configuration file for writing: " << filename << endl;
+    cerr << "Error: Could not open configuration file for writing: " << filename
+         << endl;
     exit(1);
   }
 
@@ -71,4 +72,3 @@ int main() {
 
   return 0;
 }
-
